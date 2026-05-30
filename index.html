@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fresh Setup — Everything You Need After A Fresh Install</title>
+  <meta name="description" content="Fresh Setup is a curated software hub for developers, gamers, students and creators. 100+ apps across 11 categories — all official sources." />
+  <meta name="keywords" content="fresh install, software, developer tools, browsers, gaming, ai tools, privacy, setup, windows apps, curated" />
+  <meta property="og:title" content="Fresh Setup — Essential Software, Curated." />
+  <meta property="og:description" content="100+ curated apps for developers, gamers, students, creators & more. All official links." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Mouse glow -->
+  <div class="mouse-glow" id="mouseGlow"></div>
+
+  <!-- ══════════════════════ NAV ══════════════════════ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Fresh Setup home">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Fresh<span class="logo-accent">Setup</span></span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#popular"    class="nav-link">Popular</a>
+        <a href="#browser"    class="nav-link">Browsers</a>
+        <a href="#developer"  class="nav-link">Developer</a>
+        <a href="#gaming"     class="nav-link">Gaming</a>
+        <a href="#ai-tools"   class="nav-link">AI</a>
+        <a href="#creator"    class="nav-link">Creator</a>
+        <a href="#privacy"    class="nav-link">Privacy</a>
+        <a href="#media"      class="nav-link">Media</a>
+        <a href="#about-me"   class="nav-link nav-link-special">About</a>
+      </div>
+
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+      <a href="#popular"      class="mobile-link" role="menuitem">🔥 Popular</a>
+      <a href="#recommended"  class="mobile-link" role="menuitem">⭐ Recommended</a>
+      <a href="#browser"      class="mobile-link" role="menuitem">🌐 Browsers</a>
+      <a href="#developer"    class="mobile-link" role="menuitem">🛠️ Developer</a>
+      <a href="#gaming"       class="mobile-link" role="menuitem">🎮 Gaming</a>
+      <a href="#creator"      class="mobile-link" role="menuitem">🎨 Creator</a>
+      <a href="#ai-tools"     class="mobile-link" role="menuitem">🤖 AI Tools</a>
+      <a href="#productivity" class="mobile-link" role="menuitem">📋 Productivity</a>
+      <a href="#student"      class="mobile-link" role="menuitem">📚 Student</a>
+      <a href="#privacy"      class="mobile-link" role="menuitem">🔒 Privacy</a>
+      <a href="#power-user"   class="mobile-link" role="menuitem">⚡ Power User</a>
+      <a href="#media"        class="mobile-link" role="menuitem">🎵 Media</a>
+      <a href="#system"       class="mobile-link" role="menuitem">🖥️ System</a>
+      <a href="#about-me"     class="mobile-link mobile-link-special" role="menuitem">👤 About</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════ HERO ══════════════════════ -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+    <div class="hero-content fade-in">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        100+ Apps · All Official Sources
+      </div>
+
+      <h1 class="hero-title">
+        Everything You Need<br />
+        <span class="hero-title-gradient">After A Fresh Install</span>
+      </h1>
+      <p class="hero-subtitle">
+        Curated software for developers, gamers, students and creators.<br />
+        11 categories. Zero bloatware. All official links.
+      </p>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <label for="searchInput" class="sr-only">Search software</label>
+        <div class="search-inner">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="search" id="searchInput" class="search-input"
+            placeholder="Search 100+ apps — VS Code, Discord, Brave…"
+            autocomplete="off" spellcheck="false" />
+          <kbd class="search-kbd">Ctrl+K</kbd>
+        </div>
+      </div>
+
+      <!-- Filter pills -->
+      <div class="filter-pills" role="group" aria-label="Filter by category" id="filterPills">
+        <button class="pill pill-active" data-filter="all"         id="pill-all">All</button>
+        <button class="pill"             data-filter="browser"     id="pill-browser">🌐 Browsers</button>
+        <button class="pill"             data-filter="developer"   id="pill-developer">🛠️ Developer</button>
+        <button class="pill"             data-filter="gaming"      id="pill-gaming">🎮 Gaming</button>
+        <button class="pill"             data-filter="creator"     id="pill-creator">🎨 Creator</button>
+        <button class="pill"             data-filter="ai-tools"    id="pill-ai-tools">🤖 AI Tools</button>
+        <button class="pill"             data-filter="productivity" id="pill-productivity">📋 Productivity</button>
+        <button class="pill"             data-filter="student"     id="pill-student">📚 Student</button>
+        <button class="pill"             data-filter="privacy"     id="pill-privacy">🔒 Privacy</button>
+        <button class="pill"             data-filter="power-user"  id="pill-power-user">⚡ Power User</button>
+        <button class="pill"             data-filter="media"       id="pill-media">🎵 Media</button>
+        <button class="pill"             data-filter="system"      id="pill-system">🖥️ System</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-number" id="statCount">105</span><span class="stat-label">Apps curated</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">11</span><span class="stat-label">Categories</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">100%</span><span class="stat-label">Official sources</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-number">0</span><span class="stat-label">Affiliate links</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ MAIN ══════════════════════ -->
+  <main id="main-content" aria-label="Software catalog">
+
+    <!-- No results -->
+    <div class="no-results hidden" id="noResults" role="status" aria-live="polite">
+      <div class="no-results-inner">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <p>No results for "<span id="noResultsQuery"></span>"</p>
+        <small>Try a different keyword or browse by category.</small>
+      </div>
+    </div>
+
+    <!-- ── POPULAR ──────────────────────────────── -->
+    <section class="special-section fade-in" id="popular" aria-labelledby="popular-heading">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-icon">🔥</span>
+          <span class="section-tag section-tag--hot">Trending</span>
+        </div>
+        <h2 class="section-title" id="popular-heading">Most Popular</h2>
+        <p class="section-desc">The apps everyone installs first — universally loved and trusted.</p>
+      </div>
+      <div class="cards-grid" id="grid-popular"></div>
+    </section>
+
+    <!-- ── RECOMMENDED ─────────────────────────── -->
+    <section class="special-section fade-in" id="recommended" aria-labelledby="rec-heading">
+      <div class="section-header">
+        <div class="section-label">
+          <span class="section-icon">⭐</span>
+          <span class="section-tag section-tag--star">Editor's Pick</span>
+        </div>
+        <h2 class="section-title" id="rec-heading">Recommended</h2>
+        <p class="section-desc">Hand-picked tools that will genuinely transform your workflow.</p>
+      </div>
+      <div class="cards-grid" id="grid-recommended"></div>
+    </section>
+
+    <!-- ── BROWSERS ────────────────────────────── -->
+    <section class="category-section fade-in" id="browser" data-category="browser" aria-labelledby="browser-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🌐</span><span class="section-tag">Browsers</span></div>
+        <h2 class="section-title" id="browser-heading">Web Browsers</h2>
+        <p class="section-desc">Fast, secure and feature-rich browsers for every kind of user.</p>
+      </div>
+      <div class="cards-grid" id="grid-browser"></div>
+    </section>
+
+    <!-- ── DEVELOPER ───────────────────────────── -->
+    <section class="category-section fade-in" id="developer" data-category="developer" aria-labelledby="dev-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🛠️</span><span class="section-tag">Developer</span></div>
+        <h2 class="section-title" id="dev-heading">Developer Tools</h2>
+        <p class="section-desc">The essential toolkit for every programmer, from editors to runtimes.</p>
+      </div>
+      <div class="cards-grid" id="grid-developer"></div>
+    </section>
+
+    <!-- ── GAMING ─────────────────────────────── -->
+    <section class="category-section fade-in" id="gaming" data-category="gaming" aria-labelledby="gaming-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🎮</span><span class="section-tag">Gaming</span></div>
+        <h2 class="section-title" id="gaming-heading">Gaming Essentials</h2>
+        <p class="section-desc">Level up your setup with launchers, communication and performance tools.</p>
+      </div>
+      <div class="cards-grid" id="grid-gaming"></div>
+    </section>
+
+    <!-- ── CREATOR ────────────────────────────── -->
+    <section class="category-section fade-in" id="creator" data-category="creator" aria-labelledby="creator-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🎨</span><span class="section-tag">Creator</span></div>
+        <h2 class="section-title" id="creator-heading">Creator Studio</h2>
+        <p class="section-desc">Design, edit, record and publish — professional creative tools, free.</p>
+      </div>
+      <div class="cards-grid" id="grid-creator"></div>
+    </section>
+
+    <!-- ── AI TOOLS ───────────────────────────── -->
+    <section class="category-section fade-in" id="ai-tools" data-category="ai-tools" aria-labelledby="ai-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🤖</span><span class="section-tag">AI Tools</span></div>
+        <h2 class="section-title" id="ai-heading">AI Tools</h2>
+        <p class="section-desc">Supercharge every workflow with the best AI-powered assistants and platforms.</p>
+      </div>
+      <div class="cards-grid" id="grid-ai-tools"></div>
+    </section>
+
+    <!-- ── PRODUCTIVITY ───────────────────────── -->
+    <section class="category-section fade-in" id="productivity" data-category="productivity" aria-labelledby="prod-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">📋</span><span class="section-tag">Productivity</span></div>
+        <h2 class="section-title" id="prod-heading">Productivity</h2>
+        <p class="section-desc">Stay organised, communicate faster and get more done every day.</p>
+      </div>
+      <div class="cards-grid" id="grid-productivity"></div>
+    </section>
+
+    <!-- ── STUDENT ────────────────────────────── -->
+    <section class="category-section fade-in" id="student" data-category="student" aria-labelledby="student-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">📚</span><span class="section-tag">Student</span></div>
+        <h2 class="section-title" id="student-heading">Student Toolkit</h2>
+        <p class="section-desc">Study smarter, write better and stay organised through any course.</p>
+      </div>
+      <div class="cards-grid" id="grid-student"></div>
+    </section>
+
+    <!-- ── PRIVACY ────────────────────────────── -->
+    <section class="category-section fade-in" id="privacy" data-category="privacy" aria-labelledby="privacy-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🔒</span><span class="section-tag">Privacy</span></div>
+        <h2 class="section-title" id="privacy-heading">Privacy & Security</h2>
+        <p class="section-desc">Protect your data, encrypt your drives and browse without being tracked.</p>
+      </div>
+      <div class="cards-grid" id="grid-privacy"></div>
+    </section>
+
+    <!-- ── POWER USER ─────────────────────────── -->
+    <section class="category-section fade-in" id="power-user" data-category="power-user" aria-labelledby="power-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">⚡</span><span class="section-tag">Power User</span></div>
+        <h2 class="section-title" id="power-heading">Power User</h2>
+        <p class="section-desc">Advanced utilities for those who demand total control of their system.</p>
+      </div>
+      <div class="cards-grid" id="grid-power-user"></div>
+    </section>
+
+    <!-- ── MEDIA ──────────────────────────────── -->
+    <section class="category-section fade-in" id="media" data-category="media" aria-labelledby="media-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🎵</span><span class="section-tag">Media</span></div>
+        <h2 class="section-title" id="media-heading">Media & Entertainment</h2>
+        <p class="section-desc">Music players, media servers and home theatre software for every format.</p>
+      </div>
+      <div class="cards-grid" id="grid-media"></div>
+    </section>
+
+    <!-- ── SYSTEM ─────────────────────────────── -->
+    <section class="category-section fade-in" id="system" data-category="system" aria-labelledby="system-heading">
+      <div class="section-header">
+        <div class="section-label"><span class="section-icon">🖥️</span><span class="section-tag">System</span></div>
+        <h2 class="section-title" id="system-heading">System Utilities</h2>
+        <p class="section-desc">Monitor, clean, analyse and optimise every part of your PC.</p>
+      </div>
+      <div class="cards-grid" id="grid-system"></div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════ ABOUT / CREATOR LINKS ══════════════════════ -->
+  <section class="about-section fade-in" id="about-me" aria-labelledby="about-heading">
+    <div class="about-inner">
+
+      <!-- Profile header -->
+      <div class="profile-header">
+        <div class="avatar-stack">
+          <img src="assets/avatar-anime.png"  alt="ABHIS anime avatar"  class="avatar avatar--main" />
+          <img src="assets/avatar-glitch.png" alt="ABHIS glitch avatar" class="avatar avatar--alt" />
+        </div>
+        <div class="profile-meta">
+          <span class="profile-tag">Made by</span>
+          <h2 class="profile-name" id="about-heading">ABHIS</h2>
+          <p class="profile-bio">Developer &middot; Creator &middot; Builder</p>
+          <div class="profile-badges">
+            <span class="pbadge">🌐 Web Dev</span>
+            <span class="pbadge">🎮 Gamer</span>
+            <span class="pbadge">🎨 Creator</span>
+            <span class="pbadge">🤖 AI Explorer</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social links grid -->
+      <div class="social-grid">
+
+        <a href="https://guns.lol/qve5" target="_blank" rel="noopener noreferrer" class="social-card social-card--guns" id="link-gunslol" aria-label="Guns.lol profile">
+          <div class="social-card-icon">🔫</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Guns.lol</span>
+            <span class="social-card-handle">guns.lol/qve5</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="https://discord.com/users/723681043336658966" target="_blank" rel="noopener noreferrer" class="social-card social-card--discord" id="link-discord" aria-label="Discord profile">
+          <div class="social-card-icon">💬</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Discord</span>
+            <span class="social-card-handle">@abhis</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="https://abhis-portfolio-lake.vercel.app/" target="_blank" rel="noopener noreferrer" class="social-card social-card--portfolio" id="link-portfolio" aria-label="Portfolio website">
+          <div class="social-card-icon">🗂️</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Portfolio</span>
+            <span class="social-card-handle">abhis-portfolio-lake.vercel.app</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="https://abhis-desk-site.vercel.app/" target="_blank" rel="noopener noreferrer" class="social-card social-card--desk" id="link-desk" aria-label="Desk site">
+          <div class="social-card-icon">🖥️</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Desk Site</span>
+            <span class="social-card-handle">abhis-desk-site.vercel.app</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="https://abhinavjha928-source.github.io/abhis-hub/" target="_blank" rel="noopener noreferrer" class="social-card social-card--links" id="link-hub" aria-label="Links hub page">
+          <div class="social-card-icon">🔗</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Links Hub</span>
+            <span class="social-card-handle">abhis-hub</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="https://github.com/abhinavjha928-source" target="_blank" rel="noopener noreferrer" class="social-card social-card--github" id="link-github" aria-label="GitHub profile">
+          <div class="social-card-icon">🐙</div>
+          <div class="social-card-body">
+            <span class="social-card-name">GitHub</span>
+            <span class="social-card-handle">abhinavjha928-source</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="mailto:abhinavjha928@gmail.com" class="social-card social-card--email" id="link-email" aria-label="Send email">
+          <div class="social-card-icon">📧</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Gmail</span>
+            <span class="social-card-handle">abhinavjha928@gmail.com</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="social-card social-card--desk" id="link-vercel" aria-label="Deployed on Vercel">
+          <div class="social-card-icon">▲</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Vercel</span>
+            <span class="social-card-handle">Projects deployed here</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+        <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="social-card social-card--spotify" id="link-spotify" aria-label="Spotify">
+          <div class="social-card-icon">🎵</div>
+          <div class="social-card-body">
+            <span class="social-card-name">Spotify</span>
+            <span class="social-card-handle">Music I listen to</span>
+          </div>
+          <svg class="social-card-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ FOOTER ══════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">Fresh<span class="logo-accent">Setup</span></span>
+        </div>
+        <div class="footer-links-row">
+          <a href="https://guns.lol/qve5"                                   target="_blank" rel="noopener noreferrer" class="footer-link">Guns.lol</a>
+          <a href="https://discord.com/users/723681043336658966"             target="_blank" rel="noopener noreferrer" class="footer-link">Discord</a>
+          <a href="https://abhis-portfolio-lake.vercel.app/"                 target="_blank" rel="noopener noreferrer" class="footer-link">Portfolio</a>
+          <a href="https://abhis-desk-site.vercel.app/"                      target="_blank" rel="noopener noreferrer" class="footer-link">Desk Site</a>
+          <a href="https://abhinavjha928-source.github.io/abhis-hub/"        target="_blank" rel="noopener noreferrer" class="footer-link">Hub</a>
+          <a href="https://github.com/abhinavjha928-source"                  target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+          <a href="mailto:abhinavjha928@gmail.com"                                           class="footer-link">Email</a>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-tagline">All links point to official websites. No affiliate links. No tracking. No ads.</p>
+      <p class="footer-copy">Made by <a href="#about-me" class="footer-author">ABHIS</a> · &copy; 2025 FreshSetup</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
