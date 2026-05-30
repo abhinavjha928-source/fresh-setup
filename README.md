@@ -36,4 +36,4 @@ This is a static website requiring zero build steps, bundlers, or package manage
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/abhinavjha928-source/fresh-setup.git](https://github.com/abhinavjha928-source/fresh-setup.git)
+   git clone https://github.com/abhinavjha928-source/fresh-setup.git
